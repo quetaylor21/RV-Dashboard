@@ -36,7 +36,7 @@ export const requestData = (data, pageSize, page, sorted, filtered) => {
 				};
 			}),
 			sorted.map(d => {
-				d.desc ? 'desc' : 'asc';
+				return d.desc ? 'desc' : 'asc';
 			})
 		);
 
@@ -127,7 +127,7 @@ export const getColumn = table => {
 	}
 };
 
-export const getSubComonent = (row, table) => {
+export const getSubComponent = (row, table, editWidget) => {
 	const { name, id, color, price, melts, inventory } = row.original;
 	const doesItMelt = melts ? 'it melts' : "it doesn't melt";
 	const style = {
@@ -142,8 +142,16 @@ export const getSubComonent = (row, table) => {
 
 	if (table === 'widgets')
 		return (
-			<div
-				style={style}
-			>{`The ${name} is ${color}. It only costs $${price}, there are ${inventory} left and ${doesItMelt}`}</div>
+			<div style={style}>
+				{`The ${name} is ${color}. It only costs $${price}, there are ${inventory} left and ${doesItMelt}`}
+				<button
+					className="btn btn-sm btn-warning pull-right"
+					onClick={() => {
+						editWidget(row.original);
+					}}
+				>
+					Edit
+				</button>
+			</div>
 		);
 };

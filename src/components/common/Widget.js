@@ -7,11 +7,12 @@ class Widget extends Component {
 		color: 'red',
 		type: 'Add a type'
 	};
-	// componentWillMount() {
-	//   this.props.fetchData()
-	// }
+	
 	render() {
-		const { icon, type, color, count } = this.props;
+		let { icon, type, color, count } = this.props;
+		count = Object.keys(count).map(key => {
+			return { ...count[key] };
+		}).length;
 		return (
 			<div className="col-lg-6 col-md-6 col-xs-12">
 				<Link to={type === 'Users' ? '/users' : '/widgets'}>
