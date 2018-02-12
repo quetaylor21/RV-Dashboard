@@ -1,3 +1,20 @@
+I started this Application with "Create React App" for the boilerplate. I didn't go into detail with handling errors or doing real validation on the form inputs. I also used my table to show user and widget data instead of making the calls. I did write the code for the individual calls just to show that I could.
+
+To get the app up and runing you can run these commands from your terminal
+
+make a new directory for the project
+git clone git@github.com:quetaylor21/RV-Dashboard.git
+cd RV-Dashboard
+npm install
+npm start
+
+the app will be running on localhost:3000
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
